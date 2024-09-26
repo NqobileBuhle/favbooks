@@ -9,7 +9,11 @@ const Home = () => {
   const searchBook=(evt)=>{
     if(evt.key==="Enter")
     {
-      console.log("hello")
+      axios.get('https://openlibrary.org/search.json?q='+search+'&key=/works/OL166894W')
+      .then(res=>console.log(res.data.items))
+      .catch(err=>console.log(err));
+      
+      
     }
   }
   return (
@@ -23,8 +27,8 @@ const Home = () => {
         <div className='flex items-center justify-center'>
             <input type='text' placeholder='Enter your Book Name'
             value={search} onChange={e=>setSearch(e.target.value)}
-            onKeyPress={searchBook}/>
-            <button className='bg-white text-white  px-2 '>< i class="fas fa-search"></i></button>
+            onKeyDown={searchBook}/>
+            <button className='bg-white text-white  px-2 '>< i className="fas fa-search"></i></button>
         </div>
        
       </div> 
