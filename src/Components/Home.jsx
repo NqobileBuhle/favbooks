@@ -6,16 +6,19 @@ import axios from 'axios';
 
 const Home = () => {
   const[search,setSearch]=useState("");
+  const [bookData,setData]=useState([]);
   const searchBook=(evt)=>{
     if(evt.key==="Enter")
     {
-      axios.get('https://openlibrary.org/search.json?q='+search+'&key=/works/OL166894W')
-      .then(res=>console.log(res.data.items))
+      axios.get('https://www.googleapis.com/books/v1/volumes?q='+search+'&key=AIzaSyA6SaT23KNiiA6DnUfUQTvFeyAcQEkwnSU'+'&maxResults=40')
+      .then(res=>setData(res.data.items))
       .catch(err=>console.log(err));
       
       
     }
   }
+   
+  
   return (
    <>
       <div className='bg-primary w-full h-[500px] custom-shadow p-6 flex items-center relative '>
@@ -23,7 +26,7 @@ const Home = () => {
         <img src='../images/books.jpg'alt='' className='w-1/2 mt-8'/>
       </div>
       <div className='absolute top-[95px] right-[150px] text-center p-12'>
-        <h2 className='text-secondary'>Find Your Book</h2>
+        <h2 className='text-secondary text-4xl'>Find Your Book</h2>
         <div className='flex items-center justify-center'>
             <input type='text' placeholder='Enter your Book Name'
             value={search} onChange={e=>setSearch(e.target.value)}
@@ -33,18 +36,10 @@ const Home = () => {
        
       </div> 
       <div className='w-[650px] mx-auto mt-6 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5 box-border'>
-        <Card/>
-        <Card/>
-        <Card/>
-        <Card/>
-        <Card/>
-        <Card/>
-        <Card/>
-        <Card/>
-        <Card/>
-        <Card/>
-        <Card/>
-        <Card/>
+        {
+        <Card book={bookData}/>
+      }
+        
       </div>
    </>
   );
