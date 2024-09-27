@@ -20,11 +20,12 @@ const Home = () => {
    
   
   return (
-   <>
+   <div className=''>
       <div className='bg-primary w-full h-[500px] custom-shadow p-6 flex items-center relative '>
         <h1 className='text-3xl text-secondary text-center ml-9'> A room without a book is like  <br/> a body without soul.</h1>
         <img src='../images/books.jpg'alt='' className='w-1/2 mt-8'/>
       </div>
+
       <div className='absolute top-[95px] right-[150px] text-center p-12'>
         <h2 className='text-secondary text-4xl'>Find Your Book</h2>
         <div className='flex items-center justify-center'>
@@ -35,13 +36,14 @@ const Home = () => {
         </div>
        
       </div> 
+
       <div className='w-[650px] mx-auto mt-6 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5 box-border'>
         {
         <Card book={bookData}/>
       }
         
       </div>
-   </>
+   </div>
   );
 }
 

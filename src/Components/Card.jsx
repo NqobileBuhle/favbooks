@@ -10,7 +10,8 @@ const Card = ({ book }) => {
         let amount=items.saleInfo.listPrice && items.saleInfo.listPrice.amount;
         if (thumbnail!=undefined && amount !=undefined)
         return (
-          <>
+          < >
+
             <div className="bg-secondary rounded-lg p-2 sm:p-4 mb-2.5 sm:mb-4 shadow-md transition duration-500 text-center relative transform hover:scale-90 hover:bg-white">
               <img
                 src={thumbnail}
