@@ -1,7 +1,9 @@
-import React from "react";
+import React, { useState } from "react";
+import BookDetails from "./BookDetails";
 
 const Card = ({ book }) => {
-  console.log(book);
+  const[show,setShow]=useState(false);
+  const[bookItem,setItem]=useState();
   return (
     <>
       {
@@ -12,7 +14,7 @@ const Card = ({ book }) => {
         return (
           < >
 
-            <div className="bg-secondary rounded-lg p-2 sm:p-4 mb-2.5 sm:mb-4 shadow-md transition duration-500 text-center relative transform hover:scale-90 hover:bg-white">
+            <div  onClick={() => {setShow(true),setItem(items)}} className="bg-secondary rounded-lg p-2 sm:p-4 mb-2.5 sm:mb-4 shadow-md transition duration-500 text-center relative transform hover:scale-90 hover:bg-white">
               <img
                 src={thumbnail}
                 alt=""
@@ -23,6 +25,7 @@ const Card = ({ book }) => {
                 <p className='absolute bottom-1.5 left-2.5 right-1.5 bg-primary text-secondary font-bold" style="font-size:13px '>&#8377;{amount}</p>
               </div>
             </div>
+            <BookDetails show={show} items={bookItem}/>
           </>
         );
       })

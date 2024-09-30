@@ -1,5 +1,5 @@
 import React,{useState} from 'react';
-import 'font-awesome/css/font-awesome.min.css';
+import '@fortawesome/fontawesome-free/css/all.min.css'
 import Card from './Card';
 import axios from 'axios';
 
@@ -32,7 +32,7 @@ const Home = () => {
             <input type='text' placeholder='Enter your Book Name'
             value={search} onChange={e=>setSearch(e.target.value)}
             onKeyDown={searchBook}/>
-            <button className='bg-white text-white  px-2 '>< i className="fas fa-search"></i></button>
+            <button className='bg-white text-white  px-2 '>< i className="fas fa-search text-gray-400"></i></button>
         </div>
        
       </div> 
