@@ -18,10 +18,10 @@ const BookDetails = ({show,items,onClose}) => {
           
           <div className='info'>
             <h1 className='font-bold'>{items.volumeInfo.title}</h1>
-            <h3 className='mt-2 text-green-600 p-4'>{items.volumeInfo.authors}</h3>
-            <h4 className='text-blue-600 p-4'>{items.volumeInfo.publisher}<span>{items.volumeInfo.publishedDate}</span></h4>
+            <h3 className='mt-2 text-green-600 p-4 '>{items.volumeInfo.authors}</h3>
+            <h4 className='text-blue-600 p-4  '>{items.volumeInfo.publisher}<span className='ml-2'>{items.volumeInfo.publishedDate}</span></h4>
             <a href={items.volumeInfo.previewLink}>< button className='outline-none border-none w-[80px] rounded-[5px] bg-blue-400 text-white p-[0.1rem] ml-4'>More</button></a>
-
+            
 
           </div>
 
