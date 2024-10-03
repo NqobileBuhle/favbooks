@@ -9,7 +9,7 @@ const Navbar = () => {
       
           <img src="/images/books.jpg" alt="Logo" className='h-10 ' />
           <span className='text-[24px] font-bold'>
-            <Link to='/'>CodeX</Link>
+            <Link to='/'>Nqobile</Link>
           </span>
         </div>
         <ul className='flex space-x-8'>

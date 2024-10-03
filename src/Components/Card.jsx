@@ -25,7 +25,7 @@ const Card = ({ book }) => {
                 <p className='absolute bottom-1.5 left-2.5 right-1.5 bg-primary text-secondary font-bold" style="font-size:13px '>&#8377;{amount}</p>
               </div>
             </div>
-            <BookDetails show={show} items={bookItem}/>
+            <BookDetails show={show} items={bookItem} onClose={()=>setShow(false)}/>
           </>
         );
       })

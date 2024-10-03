@@ -2,7 +2,7 @@ import React from 'react';
 import '@fortawesome/fontawesome-free/css/all.min.css';
 
 
-const BookDetails = ({show,items}) => {
+const BookDetails = ({show,items,onClose}) => {
   if(!show)
   {
     return null;
@@ -12,7 +12,7 @@ const BookDetails = ({show,items}) => {
     <>
     <div className='min-h-screen w-full fixed left-0 right-0 top-0 bottom-0 bg-gradient-to-br from-black/20 to-black/10 flex items-center justify-center'>
       <div className='bg-white w-[700px] h-[550px] p-2 relative box-border overflow-hidden text-[1.3rem]'>
-        <button className='absolute top-4 right-4 outline-none border-none text-[17px] bg-transparent'><i className='fas fa-times'></i> </button>
+        <button onClick={onClose} className='absolute top-4 right-4 outline-none border-none text-[17px] bg-transparent'><i className='fas fa-times'></i> </button>
         <div className='mt-8 flex justify-center'>
           <img className='mr-8 w-[150px] h-[200px] pb-2' src={thumbnail} alt=''/>
           <div className='info'>
@@ -24,7 +24,7 @@ const BookDetails = ({show,items}) => {
           </div>
 
         </div>
-            <h4>{items.volumeInfo.description}</h4>
+            <h4 className='mt-8 text-sm text-justify'>{items.volumeInfo.description}</h4>
        
 
       </div>
