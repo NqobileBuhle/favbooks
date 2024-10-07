@@ -28,7 +28,7 @@ const Home = () => {
         <img src="../images/books.jpg" alt="" className="w-1/4 mt-8 ml-96  " />
       </div>
 
-      <div className="absolute top-[95px] right-[150px] text-center p-12">
+      <div className="absolute top-[95px] right-[150px] text-center p-12 md:ml-0">
         <h2 className="text-secondary text-4xl">Find Your Book</h2>
         <div className="flex items-center justify-center">
           <input

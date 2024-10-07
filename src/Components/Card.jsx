@@ -14,11 +14,11 @@ const Card = ({ book }) => {
         return (
           < >
 
-            <div  onClick={() => {setShow(true),setItem(items)}} className="bg-secondary transition duration-500   hover:scale-90 hover:bg-white">
+            <div  onClick={() => {setShow(true),setItem(items)}} className="bg-secondary transition duration-500   hover:scale-90 hover:bg-white ">
               <img
                 src={thumbnail}
                 alt=""
-                className=" w-full h-full sm:h-[250px] sm:w-[250px]   text-center relative overflow-hidden rounded-lg p-1"
+                className=" w-full h-full   text-center relative overflow-hidden rounded-lg p-1"
                />
                 
               
