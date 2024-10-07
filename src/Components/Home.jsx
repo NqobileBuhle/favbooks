@@ -8,7 +8,7 @@ const Home = () => {
   const [bookData, setData] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
   const booksPerPage = 10; 
-  const [filter, setFilter] = useState('');
+  
 
   const searchBook = (evt) => {
     if (evt.key === "Enter") {
@@ -41,6 +41,7 @@ const Home = () => {
         </h1>
         <img src="../images/books.jpg" alt="" className="w-1/2 mt-8" />
       </div>
+      
 
       <div className="absolute top-[95px] right-[150px] text-center p-12">
         <h2 className="text-secondary text-4xl">Find Your Book</h2>
