@@ -14,16 +14,16 @@ const Card = ({ book }) => {
         return (
           < >
 
-            <div  onClick={() => {setShow(true),setItem(items)}} className="bg-secondary rounded-lg p-2 sm:p-4 mb-2.5 sm:mb-4 shadow-md transition duration-500 text-center relative transform hover:scale-90 hover:bg-white">
+            <div  onClick={() => {setShow(true),setItem(items)}} className="bg-secondary transition duration-500   hover:scale-90 hover:bg-white">
               <img
                 src={thumbnail}
                 alt=""
-                className=" w-full h-[150px] sm:h-[200px] mt-1 sm:mt-2 rounded-t-lg rounded-b-lg bg-secondary p-2 sm:p-4 mb-2.5 sm:mb-4 shadow-md transition duration-500 text-center relative"
-              />
+                className=" w-full h-full sm:h-[250px] sm:w-[250px]   text-center relative overflow-hidden rounded-lg p-1"
+               />
                 
               
               
-              <div className="flex flex-col">
+              {/* <div className="flex flex-col">
                 <h3 className="text-sm mb-3">{items.volumeInfo.title}</h3>
                 <div>
                   <button className="bg-primary text-secondary text-sm  relative mb-4">AddToFavorites</button></div>
@@ -32,7 +32,7 @@ const Card = ({ book }) => {
                 
               
                 
-              </div>
+              </div> */}
               
             </div>
             

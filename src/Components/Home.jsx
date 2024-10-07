@@ -6,9 +6,6 @@ import axios from "axios";
 const Home = () => {
   const [search, setSearch] = useState("");
   const [bookData, setData] = useState([]);
-  const [currentPage, setCurrentPage] = useState(1);
-  const booksPerPage = 10; 
-  
 
   const searchBook = (evt) => {
     if (evt.key === "Enter") {
@@ -21,27 +18,15 @@ const Home = () => {
         .catch((err) => console.log(err));
     }
   };
-  
-
-  // Pagination 
-  const lastBookIndex = currentPage * booksPerPage;
-  const firstBookIndex = lastBookIndex - booksPerPage;
-  const currentBooks = bookData.slice(firstBookIndex, lastBookIndex);
-  const totalPages = Math.ceil(bookData.length / booksPerPage);
-
-  const changePage = (pageNumber) => {
-    setCurrentPage(pageNumber);
-  };
 
   return (
     <div className="">
-      <div className="bg-primary w-full h-[500px] custom-shadow p-6 flex items-center relative">
+      <div className="bg-primary w-full h-full custom-shadow p-8 flex items-center relative">
         <h1 className="text-3xl text-secondary text-center ml-9">
           A room without a book is like <br /> a body without soul.
         </h1>
-        <img src="../images/books.jpg" alt="" className="w-1/2 mt-8" />
+        <img src="../images/books.jpg" alt="" className="w-1/4 mt-8 ml-96  " />
       </div>
-      
 
       <div className="absolute top-[95px] right-[150px] text-center p-12">
         <h2 className="text-secondary text-4xl">Find Your Book</h2>
@@ -59,28 +44,12 @@ const Home = () => {
         </div>
       </div>
 
-      <div className="w-[650px] mx-auto mt-6 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5 box-border">
-        {<Card book={currentBooks} />}
-      </div>
-
-      {/* Pagination controls */}
-      <div className="flex justify-center mt-6">
-        {Array.from({ length: totalPages }, (_, index) => (
-          <button
-            key={index + 1}
-            onClick={() => changePage(index + 1)}
-            className={`px-3 py-1 mx-1 text-sm font-bold ${
-              currentPage === index + 1
-                ? "bg-primary text-white"
-                : "bg-gray-200"
-            } hover:bg-primary hover:text-white`}
-          >
-            {index + 1}
-          </button>
-        ))}
+      <div className="w-[650px] mx-auto mt-6 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5 box-border mb-4">
+        {<Card book={bookData} />}
       </div>
     </div>
   );
 };
 
 export default Home;
+
