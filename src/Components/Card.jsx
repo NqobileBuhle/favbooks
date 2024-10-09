@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import BookDetails from "./BookDetails";
+import { MdFavorite } from "react-icons/md";
 
 const Card = ({ book }) => {
   const[show,setShow]=useState(false);
@@ -19,7 +20,9 @@ const Card = ({ book }) => {
                 src={thumbnail}
                 alt=""
                 className=" w-full h-full   text-center relative overflow-hidden rounded-lg p-1"
+                
                />
+               <MdFavorite className="absolute top-2 right-2 text-xl text-red-400" />
                 
               
               

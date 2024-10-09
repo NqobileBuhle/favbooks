@@ -1,7 +1,13 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link ,useLocation} from 'react-router-dom';
 
 const Navbar = () => {
+  const location=useLocation();
+
+  const titles={
+  './Home': 'AVAILABLE BOOKS',
+  };
+  const title=titles[location.pathname]||''
   return (
     <nav className='bg-secondary p-6'>
       <div className='container mx-auto flex justify-between items-center'>
@@ -30,7 +36,9 @@ const Navbar = () => {
           </li>
         </ul>
       </div>
+      <h1 className="text-center text-white text-2xl md:text-3xl lg:text-4xl mt-4">{title}</h1>
     </nav>
+    
   );
 }
 
