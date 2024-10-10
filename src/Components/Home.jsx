@@ -1,11 +1,16 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import "@fortawesome/fontawesome-free/css/all.min.css";
 import Card from "./Card";
 import axios from "axios";
+import { useAppContext } from "./context/appContext";
 
 const Home = () => {
   const [search, setSearch] = useState("");
   const [bookData, setData] = useState([]);
+
+  const {favorites,addToFavorites,removeFromFavorites}=useAppContext();
+
+  console.log('Favorites are',favorites)
 
   const searchBook = (evt) => {
     if (evt.key === "Enter") {

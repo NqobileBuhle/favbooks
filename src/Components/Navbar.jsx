@@ -1,18 +1,21 @@
 import React from 'react';
-import { Link ,useLocation} from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 
 const Navbar = () => {
-  const location=useLocation();
+  const location = useLocation();
 
-  const titles={
-  './Home': 'AVAILABLE BOOKS',
+  const titles = {
+    '/': 'AVAILABLE BOOKS',
+    '/favorites': 'YOUR FAVORITE BOOKS',
+    '/about': 'READ MORE ABOUT US'
   };
-  const title=titles[location.pathname]||''
+  
+  const title = titles[location.pathname] || '';
+
   return (
     <nav className='bg-secondary p-6'>
       <div className='container mx-auto flex justify-between items-center'>
         <div className='flex items-center'>
-      
           <img src="/images/books.jpg" alt="Logo" className='h-10 ' />
           <span className='text-[24px] font-bold'>
             <Link to='/'>eBOOKS</Link>
@@ -25,7 +28,7 @@ const Navbar = () => {
             </Link>
           </li>
           <li>
-            <Link to='/booklist' className='hover:text-yellow-600'>
+            <Link to='/favorites' className='hover:text-yellow-600'>  {/* Updated the path */}
               Favorites
             </Link>
           </li>
@@ -38,9 +41,9 @@ const Navbar = () => {
       </div>
       <h1 className="text-center text-white text-2xl md:text-3xl lg:text-4xl mt-4">{title}</h1>
     </nav>
-    
   );
-}
+};
 
 export default Navbar;
+
 
