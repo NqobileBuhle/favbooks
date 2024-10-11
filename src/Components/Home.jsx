@@ -1,6 +1,6 @@
 import React, { useContext, useState } from "react";
 import "@fortawesome/fontawesome-free/css/all.min.css";
-import Card from "./Card";
+import Card from "../Components/Card";
 import axios from "axios";
 import { useAppContext } from "./context/appContext";
 
@@ -25,6 +25,7 @@ const Home = () => {
   };
 
   return (
+    
     <div className="">
       <div className="bg-primary w-full h-full custom-shadow p-8 flex items-center relative">
         <h1 className="text-3xl text-secondary text-center ml-9">

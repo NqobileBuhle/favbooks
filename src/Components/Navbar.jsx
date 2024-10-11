@@ -5,7 +5,7 @@ const Navbar = () => {
   const location = useLocation();
 
   const titles = {
-    '/': 'AVAILABLE BOOKS',
+    '/': 'LATEST BOOKS',
     '/favorites': 'YOUR FAVORITE BOOKS',
     '/about': 'READ MORE ABOUT US'
   };
@@ -13,10 +13,10 @@ const Navbar = () => {
   const title = titles[location.pathname] || '';
 
   return (
-    <nav className='bg-secondary p-6'>
+    <nav className='bg-secondary p-6 '>
       <div className='container mx-auto flex justify-between items-center'>
         <div className='flex items-center'>
-          <img src="/images/books.jpg" alt="Logo" className='h-10 ' />
+          <img src="/images/library.jpg" alt="Logo" className='h-10 ' />
           <span className='text-[24px] font-bold'>
             <Link to='/'>eBOOKS</Link>
           </span>
@@ -34,7 +34,7 @@ const Navbar = () => {
           </li>
           <li>
             <Link to='/about' className='hover:text-yellow-600'>
-              Read
+              About
             </Link>
           </li>
         </ul>
