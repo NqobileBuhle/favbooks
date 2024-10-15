@@ -1,4 +1,4 @@
-import React from 'react';
+import React,{useState} from 'react';
 import Navbar from './Components/Navbar';
 import Home from './Components/Home';
 import Footer from './Components/Footer';
@@ -7,14 +7,12 @@ import { Routes, Route } from 'react-router-dom';
 import BookDetails from './Components/BookDetails';
 
 const App = () => {
+  const[bookData,setBookData]=useState([]);
   return (
     <>
       <Navbar />
-      <Routes>
-        <Route path='/' element={<Home />} />
-        {/* <Route path='/favourites' element={<Favourites />} /> */}
-        
-      </Routes>
+      
+      <Home/>
       
       <Footer />
       </>

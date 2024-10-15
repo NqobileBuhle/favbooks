@@ -16,11 +16,11 @@ const Card = ({ book }) => {
         let thumbnail = items.volumeInfo.imageLinks && items.volumeInfo.imageLinks.smallThumbnail;
         let amount = items.saleInfo.listPrice && items.saleInfo.listPrice.amount;
         
-        // Only display books with a thumbnail and price
+        
         if (thumbnail && amount) {
           return (
             <div key={items.id} className="bg-secondary transition duration-500 hover:scale-90 hover:bg-white ">
-              {/* Show book details on click */}
+              
               <div onClick={() => { setShow(true); setItem(items); }}>
                 <img
                   src={thumbnail}
