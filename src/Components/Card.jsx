@@ -1,17 +1,18 @@
+
 import React, { useState } from "react";
 import BookDetails from "./BookDetails";
-import { MdFavorite } from "react-icons/md";
-import { useAppContext } from "./context/appContext";  // Adjust path as necessary
+import { MdOutlineFavoriteBorder } from "react-icons/md";
+import { useAppContext } from "./context/appContext";  
 
 const Card = ({ book }) => {
   const [show, setShow] = useState(false);
   const [bookItem, setItem] = useState(null);
   
-  // Access the addToFavorites function from context
+ 
   const { addToFavorites } = useAppContext();
 
   return (
-    <>
+    < div className="h-full w-[650px] mx-auto mt-6 grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 mb-3">
       {book.map((items) => {
         let thumbnail = items.volumeInfo.imageLinks && items.volumeInfo.imageLinks.smallThumbnail;
         let amount = items.saleInfo.listPrice && items.saleInfo.listPrice.amount;
@@ -19,7 +20,7 @@ const Card = ({ book }) => {
         
         if (thumbnail && amount) {
           return (
-            <div key={items.id} className="bg-secondary transition duration-500 hover:scale-90 hover:bg-white ">
+            <div key={items.id} className="bg-secondary transition duration-500 hover:scale-90 hover:bg-white  ">
               
               <div onClick={() => { setShow(true); setItem(items); }}>
                 <img
@@ -29,22 +30,24 @@ const Card = ({ book }) => {
                 />
               </div>
               
-              {/* Favorite icon */}
-              <MdFavorite 
-                onClick={() => addToFavorites(items)}  // Add the specific book to favorites
+              
+              <MdOutlineFavoriteBorder
+                onClick={() => addToFavorites(items)}  
                 className="absolute top-2 right-2 text-xl text-red-400 cursor-pointer"
               />
-              
-              {/* Book details modal */}
+  
               <BookDetails show={show} items={bookItem} onClose={() => setShow(false)} />
             </div>
           );
         }
 
-        return null;  // Return nothing for books without thumbnail/amount
+    
       })}
-    </>
+    </div>
   );
 };
 
 export default Card;
+
+
+

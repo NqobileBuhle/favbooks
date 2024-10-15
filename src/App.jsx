@@ -10,9 +10,9 @@ const App = () => {
   const[bookData,setBookData]=useState([]);
   return (
     <>
-      <Navbar />
+      <Navbar  />
       
-      <Home/>
+      <Home setBookData={setBookData}/>
       
       <Footer />
       </>
